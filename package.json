@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MorrisEli/SVG-Logo-Maker/issues"
   },
-  "homepage": "https://github.com/MorrisEli/SVG-Logo-Maker#readme"
+  "homepage": "https://github.com/MorrisEli/SVG-Logo-Maker#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
