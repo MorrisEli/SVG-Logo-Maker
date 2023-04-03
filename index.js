@@ -50,7 +50,7 @@ function svgPrompt() {
                 }
                 return true
             }
-        }
+        
      },
      //log shape choice (Circle, Triangle, Square)
     ]).then((data) => {
@@ -62,6 +62,7 @@ function svgPrompt() {
             console.log('Square')
         }
     })
+}
 
     svgPrompt()
 //Text, three character length
