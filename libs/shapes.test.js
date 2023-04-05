@@ -1,5 +1,6 @@
 const { Circle, Triangle, Square } = require('./shapes.js')
 
+//circle test
 describe('Render Circle', () => {
     //using it(), to test expect() function. 
     it('Should pass if the parameters match', () => {
@@ -14,7 +15,7 @@ describe('Render Circle', () => {
         </svg>`)
     })
 })
-
+//triangle test
 describe('Render Triangle', () => {
     it('Should pass if the parameters match', () => {
         const triangle = new Triangle()
@@ -28,7 +29,7 @@ describe('Render Triangle', () => {
         </svg>`)
     })
 })
-
+//square test
 describe('Render Square', () => {
     it('Should pass if the parameters match', () => {
         const square = new Square()

@@ -3,7 +3,7 @@ const fs = require('fs')
 
 //shapes variable
 const { Triangle, Circle, Square} = require('./libs/shapes.js')
-const { type } = require('os')
+
 
 //questions
 function svgPrompt() {
@@ -33,7 +33,7 @@ function svgPrompt() {
             name: 'svgText',
             message: 'Enter your text. (up to 3 characters): ',
             validate: function(input) {
-                if (input.lenght > 3) { //make sure character length is < 3
+                if (input.lenght > 3) { //make sure character length is not over 3
                     return `\x1b[31mInput must be 3 characters or less\x1b[0m`
                 }
                 return true
@@ -55,16 +55,29 @@ function svgPrompt() {
      //log shape choice (Circle, Triangle, Square)
     ]).then((data) => {
         if(data.shape === 'Triangle') {
-            console.log('Triangle')
+            const triangle = new Triangle()
+            triangle.backgroundColor = data.backgroundColor
+            triangle.svgText = data.svgText
+            triangle.textColor = data.textColor
+            fs.writeFile('triangle.svg', triangle.render(), (err) => {err ? console.error(err) : console.log('\x1b[32mGenerated triangle.svg\x1b[0m')})
         } else if (data.shape === 'Circle') {
-            console.log('Circle')
+            const circle = new Circle()
+            circle.backgroundColor = data.backgroundColor
+            circle.svgText = data.svgText
+            circle.textColor = data.textColor
+            fs.writeFile('circle.svg', circle.render(), (err) => {err ? console.error(err) : console.log('\x1b[32mGenerated circle.svg\x1b[0m')})
         } else {
-            console.log('Square')
+            const square = new Square()
+            square.backgroundColor = data.backgroundColor
+            square.svgText = data.svgText
+            square.textColor = data.textColor
+            fs.writeFile('square.svg', square.render(), (err) => {err ? console.error(err) : console.log('\x1b[32mGenerated square.svg\x1b[0m')})
         }
     })
 }
 
-    svgPrompt()
+
+svgPrompt()
 //Text, three character length
 
 //Text color

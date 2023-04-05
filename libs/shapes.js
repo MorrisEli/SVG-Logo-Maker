@@ -12,12 +12,12 @@ class shape {
 
 
 }
-
+//inherit from parent ^
 class Circle extends shape {
     constructor(backgroundColor, svgText, textColor) {
         super(backgroundColor, svgText, textColor)
     }
-
+//render html
     render() {
         return `<svg width="500px" height="500px" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <circle cx="250" cy="250" r="150" stroke="black" fill="${this.backgroundColor}" stroke-width="2" class="shape"/>
@@ -31,6 +31,7 @@ class Triangle extends shape {
         super(backgroundColor, svgText, textColor)
     }
 
+//render actual HTML
     render() {
         return `<svg width="500px" height="500px" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <polygon points="250,50 100,300 400,300" fill="${this.backgroundColor}" stroke="black" stroke-width="2"/>
